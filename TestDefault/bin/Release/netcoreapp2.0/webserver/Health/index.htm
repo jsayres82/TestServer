@@ -1,0 +1,106 @@
+<div id="content"><h1>Health</h1><table class="left"><tbody>
+<tr><td><b>EOT:</b></td><td>&nbsp;</td><td id="gEOT" align="right">~gEOT~</td></tr>
+<tr><td><b>GNSS Antenna Detected:</b></td><td>&nbsp;</td><td id="gAntDet" align="right">~gAntDet~</td></tr>
+<tr><td><b>GNSS Antenna Shorted:</b></td><td>&nbsp;</td><td id="gAntShort" align="right">~gAntShort~</td></tr>
+<tr><td><b>GNSS:</b></td><td>&nbsp;</td><td id="gGNSS" align="right">~gGNSS~</td></tr>
+<tr><td><b>Cell Modem:</b></td><td>&nbsp;</td><td id="gCell" align="right">~gCell~</td></tr>
+<tr><td><b>Pressure XDCR:</b></td><td>&nbsp;</td><td id="gXDCR" align="right">~gXDCR~</td></tr>
+<tr><td><b>Brake Valve:</b></td><td>&nbsp;</td><td id="gBrake" align="right">~gBrake~</td></tr>
+<tr><td><b>Gen Valve:</b></td><td>&nbsp;</td><td id="gValve" align="right">~gValve~</td></tr>
+<tr><td><b>Generator:</b></td><td>&nbsp;</td><td id="gGen" align="right">~gGen~</td></tr>
+<tr><td><b>Gen Overspin:</b></td><td>&nbsp;</td><td id="gOverspin" align="right">~gOverspin~</td></tr>
+<tr><td><b>HVM:</b></td><td>&nbsp;</td><td id="gHVM" align="right">~gHVM~</td></tr>
+<tr><td><b>Pushbutton :</b></td><td>&nbsp;</td><td id="gButt" align="right">~gButt~</td></tr></tbody></table>
+<table class="right"><tbody>
+<tr><td><b>SD-Card:</b></td><td>&nbsp;</td><td id="gSD" align="right">~gSD~</td></tr>
+<tr><td><b>Accelerometer:</b></td><td>&nbsp;</td><td id="gAccel" align="right">~gAccel~</td></tr>
+<tr><td><b>Real-Time Clock:</b></td><td>&nbsp;</td><td id="gRTC" align="right">~gRTC~</td></tr>
+<tr><td><b>Temp Sensor:</b></td><td>&nbsp;</td><td id="gTemp" align="right">~gTemp~</td></tr>
+<tr><td><b>Daylight Sensor:</b></td><td>&nbsp;</td><td id="gDLS"  align="right">~gDLS~</td></tr>
+<tr><td><b>Charger:</b></td><td>&nbsp;</td><td id="gCharge" align="right">~gCharge~</td></tr>
+<tr><td><b>Charging Supply (Ext):</b></td><td>&nbsp;</td><td id="gChargeExt" align="right">~gChargeExt~</td></tr>
+<tr><td><b>Charging Supply (Gen):</b></td><td>&nbsp;</td><td id="gChargeGen" align="right">~gChargeGen~</td></tr>
+<tr><td><b>RPM Pick-up:</b></td><td>&nbsp;</td><td id="gRPM" align="right">~gRPM~</td></tr>
+<tr><td><b>Wi-Fi:</b></td><td>&nbsp;</td><td id="gWifi" align="right">~gWifi~</td></tr>
+<tr><td><b>BT:</b></td><td>&nbsp;</td><td id="gBT" align="right">~gBT~</td></tr></tbody></table>
+</tbody></table><p>&nbsp;</p>
+<center><input type="button" id="pauseUpdatesBtn" onclick="handlePause();" value="Stop Updates">
+<p><small>Note: This page updates automatically.</small></p></center>
+</div>
+<script type="text/javascript">
+// Enables the page links
+function handleLoad() {
+	// setup status updating to be as fast as possible and kick off in 1 second.
+	
+}
+
+// Enables the page links
+function enablePageLinks() {
+	document.getElementById('pageLinks').disabled = false;
+}
+
+// Stops updating and enables the page links
+function handlePause() {
+	var btn = document.getElementById('pauseUpdatesBtn');
+	if(btn.value == "Stop Updates")
+	{
+		shouldUpdate = false;
+		if(!msgSent){
+			btn.value = "Start Updates";			
+			enablePageLinks();
+		}else{
+			btn.value = "Updates Stopping";
+			btn.disabled = true;
+		}			
+	}
+	else if(btn.value == "Start Updates")
+	{
+		shouldUpdate = true;
+		document.getElementById('pageLinks').disabled = true;
+		btn.value = "Stop Updates";
+		setTimeout("newAJAXCommand('/Health/status.xml', updateStatus, true)",1000);
+	}
+}
+
+// Updates dynamic variables and schedules the next update(if auto-update is turned off)
+function updateStatus(xmlData) {
+	msgSent	= false;
+	if(!shouldUpdate){
+		enablePageLinks();
+		document.getElementById('pauseUpdatesBtn').value = "Start Updates";
+		document.getElementById('pauseUpdatesBtn').disabled = false;
+	}
+	// Check if a timeout occurred
+	if(!xmlData)
+	{
+		return;
+	}
+	document.getElementById('gEOT').innerHTML = getXMLValue(xmlData, 'gEOT');
+	document.getElementById('gAntDet').innerHTML = getXMLValue(xmlData, 'gAntDet');
+	document.getElementById('gAntShort').innerHTML = getXMLValue(xmlData, 'gAntShort');
+	document.getElementById('gGNSS').innerHTML = getXMLValue(xmlData, 'gGNSS');
+	document.getElementById('gCell').innerHTML = getXMLValue(xmlData, 'gCell');
+	document.getElementById('gXDCR').innerHTML = getXMLValue(xmlData, 'gXDCR');
+	document.getElementById('gBrake').innerHTML = getXMLValue(xmlData, 'gBrake');
+	document.getElementById('gValve').innerHTML = getXMLValue(xmlData, 'gValve');
+	document.getElementById('gGen').innerHTML = getXMLValue(xmlData, 'gGen');
+	document.getElementById('gOverspin').innerHTML = getXMLValue(xmlData, 'gOverspin');
+	document.getElementById('gHVM').innerHTML = getXMLValue(xmlData, 'gHVM');
+	document.getElementById('gButt').innerHTML = getXMLValue(xmlData, 'gButt');
+	document.getElementById('gSD').innerHTML = getXMLValue(xmlData, 'gSD');
+	document.getElementById('gAccel').innerHTML = getXMLValue(xmlData, 'gAccel');
+	document.getElementById('gRTC').innerHTML = getXMLValue(xmlData, 'gRTC');
+	document.getElementById('gTemp').innerHTML = getXMLValue(xmlData, 'gTemp');
+	document.getElementById('gDLS').innerHTML = getXMLValue(xmlData, 'gDLS');
+	document.getElementById('gCharge').innerHTML = getXMLValue(xmlData, 'gCharge');
+	document.getElementById('gChargeExt').innerHTML = getXMLValue(xmlData, 'gChargeExt');
+	document.getElementById('gChargeGen').innerHTML = getXMLValue(xmlData, 'gChargeGen');
+	document.getElementById('gWifi').innerHTML = getXMLValue(xmlData, 'gWifi');
+	document.getElementById('gBT').innerHTML = getXMLValue(xmlData, 'gBT');
+	
+	//Uncomment below to enable updating at a desired interval
+	//setTimeout("newAJAXCommand('/Health/status.xml', updateStatus, true)",1000);
+}
+setTimeout("newAJAXCommand('/Health/status.xml', updateStatus, true)",1000);
+</script>
+

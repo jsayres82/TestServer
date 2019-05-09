@@ -1,0 +1,31 @@
+<div id="content"><h2>Firmware Update</h2>
+<p>Select image file to load.</p>
+<form id="upload_form" enctype="multipart/form-data" method="post">
+  <input type="file" name="file1" id="file1" accept=".hex" onchange="uploadFile()"><br>
+  <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+  <h3 id="status"></h3><p id="loaded_n_total"></p></form>
+<form align="center" method="get" action="/VersionControl"><button type="submit">Back</button></form></div>
+<script type="text/javascript">
+function handleLoad(){setTimeout("enablePageLinks()",1000);}
+function enablePageLinks() {document.getElementById('pageLinks').disabled = false;}
+function _(el) {  return document.getElementById(el);}
+function uploadFile() {var file = _("file1").files[0];var confirmTitle = "Confirm File Upload\n";
+var r = confirm(confirmTitle + "Name:  "+file.name+"\nSize:  " + file.size + " Bytes");
+if(r == true){var formdata = new FormData();formdata.append("file1", file);
+var ajax = new XMLHttpRequest();ajax.upload.addEventListener("progress", progressHandler, false);
+ajax.addEventListener("load", completeHandler, false);ajax.addEventListener("error", errorHandler, false);
+ajax.addEventListener("abort", abortHandler, false);ajax.open("POST", "image.hex");ajax.send(formdata);}
+else{clearInputFile(_("file1"));}}
+function progressHandler(event) {
+_("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+var percent = (event.loaded / event.total) * 100;_("progressBar").value = Math.round(percent);
+_("status").innerHTML = Math.round(percent) + "% uploaded... please wait";}
+function completeHandler(event) {_("status").innerHTML = event.target.responseText;
+_("progressBar").value = 0;}
+function errorHandler(event) {_("status").innerHTML = "Upload Failed";}
+function abortHandler(event) {_("status").innerHTML = "Upload Aborted";}
+function clearInputFile(f){
+if(f.value){try{f.value = '';}catch(err){ }if(f.value){
+var form = document.createElement('form'),parentNode = f.parentNode, ref = f.nextSibling;
+form.appendChild(f);form.reset();parentNode.insertBefore(f,ref);}}}
+</script>

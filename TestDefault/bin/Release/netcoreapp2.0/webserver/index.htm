@@ -1,0 +1,17 @@
+<div id="content"><h1>Welcome!</h1>
+<p>
+You can navigate the web server by using the site map on the left.
+</p>
+</div>
+<script type="text/javascript">
+// Enables the page links
+function handleLoad() {
+	// Enable page links in 1 second
+	setTimeout("enablePageLinks()",1000);
+}
+
+// Enables the page links
+function enablePageLinks() {
+	document.getElementById('pageLinks').disabled = false;
+}
+</script>

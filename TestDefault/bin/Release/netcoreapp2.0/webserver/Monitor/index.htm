@@ -1,0 +1,109 @@
+<div id="content"><h1>Monitor</h1><table class="left"><tbody>
+<tr><td><b>3.3V:</b></td><td>&nbsp;</td><td id="v3p3" align="right">~v3p3~</td></tr>
+<tr><td><b>3.8V:</b></td><td>&nbsp;</td><td id="v3p8" align="right">~v3p8~</td></tr>
+<tr><td><b>5.0V:</b></td><td>&nbsp;</td><td id="v5" align="right">~v5~</td></tr>
+<tr><td><b>12.0V:</b></td><td>&nbsp;</td><td id="v12" align="right">~v12~</td></tr>
+<tr><td><b>UHF Radio1:</b></td><td>&nbsp;</td><td id="vUHF1" align="right">~vUHF1~</td></tr>
+<tr><td><b>UHF Radio2:</b></td><td>&nbsp;</td><td id="vUHF2" align="right">~vUHF2~</td></tr>
+<tr><td><b>Temperature:</b></td><td>&nbsp;</td><td id="temp" align="right">~temp~</td></tr>
+<tr><td><b>Charger Temp:</b></td><td>&nbsp;</td><td id="chargeTemp" align="right">~chargeTemp~</td></tr>
+<tr><td><b>Charge Count:</b></td><td>&nbsp;</td><td id="chargeCount" align="right">~chargeCount~</td></tr>
+<tr><td><b>Charge Max Count:</b></td><td>&nbsp;</td><td id="maxCount" align="right">~maxCount~</td></tr>
+<tr><td><b>Charge Min Count:</b></td><td>&nbsp;</td><td id="minCount" align="right">~minCount~</td></tr>
+<table class="right"><tbody>
+<tr><td><b>Ext Charger In:</b></td><td>&nbsp;</td><td id="vExtCharge" align="right">~vExtCharge~</td></tr>
+<tr><td><b>Ext Charger Reg:</b></td><td>&nbsp;</td><td id="vExtReg" align="right">~vExtReg~</td></tr>
+<tr><td><b>Gen In:</b></td><td>&nbsp;</td><td id="vGen" align="right">~vGen~</td></tr>
+<tr><td><b>Gen Reg:</b></td><td>&nbsp;</td><td id="vReg" align="right">~vReg~</td></tr>
+<tr><td><b>Charging Voltage:</b></td><td>&nbsp;</td><td id="vIn" align="right">~vIn~</td></tr>
+<tr><td><b>Charging Current :</b></td><td>&nbsp;</td><td id="iIn" align="right">~iIn~</td></tr>
+<tr><td><b>Battery Voltage:</b></td><td>&nbsp;</td><td id="vBatt" align="right">~vBatt~</td></tr>
+<tr><td><b>Battery Current:</b></td><td>&nbsp;</td><td id="iBatt" align="right">~iBatt~</td></tr>
+<tr><td><b>System Load Voltage:</b></td><td>&nbsp;</td><td id="vSys" align="right">~vSys~</td></tr>
+<tr><td><b>System Load Current :</b></td><td>&nbsp;</td><td id="iLoad" align="right">~iLoad~</td></tr>
+<tr><td><b>Acceleration X:</b></td><td>&nbsp;</td><td id="accelX" align="right">~accelX~</td></tr>
+<tr><td><b>Acceleration Y:</b></td><td>&nbsp;</td><td id="accelY" align="right">~accelY~</td></tr>
+<tr><td><b>Acceleration Z:</b></td><td>&nbsp;</td><td id="accelZ" align="right">~accelZ~</td></tr>
+</tbody></table><p>&nbsp;</p>
+<center><input type="button" id="pauseUpdatesBtn" onclick="handlePause();" value="Stop Updates">
+<p><small>Note: This page updates automatically.</small></p></center>
+</div>
+<script type="text/javascript">
+// Enables the page links
+function handleLoad() {
+	// setup status updating to be as fast as possible and kick off in 1 second.
+	
+}
+
+// Enables the page links
+function enablePageLinks() {
+	document.getElementById('pageLinks').disabled = false;
+}
+
+// Stops updating and enables the page links
+function handlePause() {
+	var btn = document.getElementById('pauseUpdatesBtn');
+	if(btn.value == "Stop Updates")
+	{
+		shouldUpdate = false;
+		if(!msgSent){
+			btn.value = "Start Updates";			
+			enablePageLinks();
+			}else{
+			btn.value = "Updates Stopping";
+			btn.disabled = true;
+			}			
+	}
+	else if(btn.value == "Start Updates")
+	{
+		shouldUpdate = true;
+		document.getElementById('pageLinks').disabled = true;
+		btn.value = "Stop Updates";
+		setTimeout("newAJAXCommand('/Monitor/status.xml', updateStatus, true)",1000);
+	}
+}
+
+// Updates dynamic variables and schedules the next update(if auto-update is turned off)
+function updateStatus(xmlData) {
+
+	msgSent	= false;
+	if(!shouldUpdate){
+		enablePageLinks();
+		document.getElementById('pauseUpdatesBtn').value = "Start Updates";
+		document.getElementById('pauseUpdatesBtn').disabled = false;
+		}
+	// Check if a timeout occurred
+	if(!xmlData)
+	{
+		return;
+	}
+	document.getElementById('v3p3').innerHTML = getXMLValue(xmlData, 'v3p3');
+	document.getElementById('v3p8').innerHTML = getXMLValue(xmlData, 'v3p8');
+	document.getElementById('v5').innerHTML = getXMLValue(xmlData, 'v5');
+	document.getElementById('v12').innerHTML = getXMLValue(xmlData, 'v12');
+	document.getElementById('vUHF1').innerHTML = getXMLValue(xmlData, 'vUHF1');
+	document.getElementById('vUHF2').innerHTML = getXMLValue(xmlData, 'vUHF2');
+	document.getElementById('temp').innerHTML = getXMLValue(xmlData, 'temp');
+	document.getElementById('chargeTemp').innerHTML = getXMLValue(xmlData, 'chargeTemp');
+	document.getElementById('chargeCount').innerHTML = getXMLValue(xmlData, 'chargeCount');
+	document.getElementById('maxCount').innerHTML = getXMLValue(xmlData, 'maxCount');
+	document.getElementById('minCount').innerHTML = getXMLValue(xmlData, 'minCount');
+	document.getElementById('vExtCharge').innerHTML = getXMLValue(xmlData, 'vExtCharge');
+	document.getElementById('vExtReg').innerHTML = getXMLValue(xmlData, 'vExtReg');
+	document.getElementById('vGen').innerHTML = getXMLValue(xmlData, 'vGen');
+	document.getElementById('vReg').innerHTML = getXMLValue(xmlData, 'vReg');
+	document.getElementById('vIn').innerHTML = getXMLValue(xmlData, 'vIn');
+	document.getElementById('iIn').innerHTML = getXMLValue(xmlData, 'iIn');
+	document.getElementById('vBatt').innerHTML = getXMLValue(xmlData, 'vBatt');
+	document.getElementById('iBatt').innerHTML = getXMLValue(xmlData, 'iBatt');
+	document.getElementById('vSys').innerHTML = getXMLValue(xmlData, 'vSys');
+	document.getElementById('iLoad').innerHTML = getXMLValue(xmlData, 'iLoad');
+	document.getElementById('accelX').innerHTML = getXMLValue(xmlData, 'accelX');
+	document.getElementById('accelY').innerHTML = getXMLValue(xmlData, 'accelY');
+	document.getElementById('accelZ').innerHTML = getXMLValue(xmlData, 'accelZ');
+	
+	//Uncomment below to enable updating at a desired interval
+	//setTimeout("newAJAXCommand('/Monitor/status.xml', updateStatus, false)",1000);
+}
+setTimeout("newAJAXCommand('/Monitor/status.xml', updateStatus, true)",1000);
+</script>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Watson</id>
+    <version>2.0.2</version>
+    <authors>Joel Christner</authors>
+    <owners>Joel Christner</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/jchristn/WatsonWebserver/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/jchristn/WatsonWebserver</projectUrl>
+    <description>Simple async C# web server for handling REST requests with SSL support, targeted to both .NET Core 2.0 and .NET Framework 4.6.2.</description>
+    <releaseNotes>Breaking changes, now supports Stream operations for requests and responses.  Fixed stream handling issue.</releaseNotes>
+    <copyright>(c)2019 Joel Christner</copyright>
+    <tags>web server rest restful http https api async ssl</tags>
+    <repository type="Github" url="https://github.com/jchristn/WatsonWebserver" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.2">
+        <dependency id="IpMatcher" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.1" exclude="Build,Analyzers" />
+        <dependency id="RegexMatcher" version="1.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="IpMatcher" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.1" exclude="Build,Analyzers" />
+        <dependency id="RegexMatcher" version="1.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\bin\Release\net462\WatsonWebserver.dll" target="lib\net462\WatsonWebserver.dll" />
+    <file src="C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\bin\Release\netstandard2.0\WatsonWebserver.dll" target="lib\netstandard2.0\WatsonWebserver.dll" />
+  </files>
+</package>

@@ -1,0 +1,24 @@
+<style>
+fieldset {display: block; float: left; width: 140px; padding-left: 1px; border: none;}
+fieldset button{width: 140px; display: block; background: #994d00; color: white; 
+padding: 4px; font-weight: bold; border-bottom: 1px solid #fff; text-decoration: none;}
+fieldset button:hover {background: #8A0808;}
+fieldset button:disabled {background: #dddddd;}
+ul {float: left; width: 140px; padding-right: 1px; list-style: none;}
+li a {width: 140px;display: block; background: #994d00;color: white; padding: 4px;
+    font-weight: bold; border-bottom: 1px solid #fff; text-decoration: none;}
+li a:hover { background: #8A0808;}
+html{background: #5b5b5b;}
+#title {padding: 1px 0px 1px 37px;}
+body {width: 850px;font-family: Verdana, Arial, sans-serif;background: #ffffff;
+    margin: auto; padding: 0px 12px 10px 12px;}
+#header{clear:both;}
+#spacer {background: #667;padding: 1px; font-weight: bold; margin:auto; position:relative;}
+#content {width: 645px;float: right;}
+#footer {font-size: 0.8em;color: #666;text-align: center; margin: 0px 40px 0 40px;
+    padding-top: 10px;border-top: 1px dotted #666;clear:both;}
+table.left {display:inline-block;}
+table.right {display:inline-block;float:right;}
+div.scroll {background-color: lightblue;width: 500px;height: 200px;overflow: scroll;}
+#but {text-align: center;}
+</style>

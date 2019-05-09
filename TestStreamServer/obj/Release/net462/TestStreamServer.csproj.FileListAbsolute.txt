@@ -1,0 +1,15 @@
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\watson.jpg
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\TestStreamServer.exe
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\TestStreamServer.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\IpMatcher.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\Newtonsoft.Json.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\RegexMatcher.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\WatsonWebserver.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\net462\WatsonWebserver.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.csprojAssemblyReference.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.csproj.CoreCompileInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.AssemblyInfoInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.AssemblyInfo.cs
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.csproj.CopyComplete
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.exe
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\net462\TestStreamServer.pdb

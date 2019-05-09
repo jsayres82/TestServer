@@ -1,0 +1,9 @@
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\bin\Release\netstandard2.0\WatsonWebserver.deps.json
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\bin\Release\netstandard2.0\WatsonWebserver.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\bin\Release\netstandard2.0\WatsonWebserver.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\obj\Release\netstandard2.0\WatsonWebserver.csprojAssemblyReference.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\obj\Release\netstandard2.0\WatsonWebserver.csproj.CoreCompileInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\obj\Release\netstandard2.0\WatsonWebserver.AssemblyInfoInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\obj\Release\netstandard2.0\WatsonWebserver.AssemblyInfo.cs
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\obj\Release\netstandard2.0\WatsonWebserver.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\WatsonWebserver\obj\Release\netstandard2.0\WatsonWebserver.pdb

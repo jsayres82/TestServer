@@ -1,0 +1,24 @@
+<response>
+	<gEOT>~gEOT~</gEOT>
+	<gAntDet>~gAntDet~</gAntDet>
+	<gAntShort>~gAntShort~</gAntShort>
+	<gGNSS>~gGNSS~</gGNSS>
+	<gCell>~gCell~</gCell>
+	<gXDCR>~gXDCR~</gXDCR>
+	<gBrake>~gBrake~</gBrake>
+	<gValve>~gValve~</gValve>
+	<gGen>~gGen~</gGen>
+	<gOverspin>~gOverspin~</gOverspin>
+	<gHVM>~gHVM~</gHVM>
+	<gButt>~gButt~</gButt>
+	<gSD>~gSD~</gSD>
+	<gAccel>~gAccel~</gAccel>
+	<gRTC>~gRTC~</gRTC>
+	<gTemp>~gTemp~</gTemp>
+	<gDLS>~gDLS~</gDLS>
+	<gCharge>~gCharge~</gCharge>
+	<gChargeExt>~gChargeExt~</gChargeExt>
+	<gChargeGen>~gChargeGen~</gChargeGen>
+	<gWifi>~gWifi~</gWifi>
+	<gBT>~gBT~</gBT>
+</response>

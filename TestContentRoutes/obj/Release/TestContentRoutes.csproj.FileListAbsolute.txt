@@ -1,0 +1,15 @@
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\html\index.html
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\img\watson.jpg
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\TestContentRoutes.exe.config
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\TestContentRoutes.exe
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\TestContentRoutes.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\WatsonWebserver.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\IpMatcher.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\Newtonsoft.Json.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\RegexMatcher.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\bin\Release\WatsonWebserver.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\obj\Release\TestContentRoutes.csprojAssemblyReference.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\obj\Release\TestContentRoutes.csproj.CoreCompileInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\obj\Release\TestContentRoutes.csproj.CopyComplete
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\obj\Release\TestContentRoutes.exe
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestContentRoutes\obj\Release\TestContentRoutes.pdb

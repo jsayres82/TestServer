@@ -1,0 +1,40 @@
+<div id="content"><h1>Configuration</h1><table class="left">
+<tr><td><b>Show Battery Readiness:</b></td><td>&nbsp;</td><td>~shwBattRdy~</td></tr>
+<tr><td><b>Battery Ready Text:</b></td><td>&nbsp;</td><td>~battRdyTxt~</td></tr>
+<tr><td><b>Battery Not Ready Text:</b></td><td>&nbsp;</td><td>~battNotRdyTxt~</td></tr>
+<tr><td><b>Wifi Password:</b></td><td>&nbsp;</td><td>~wifiPass~</td></tr>
+<tr><td><b>Wifi Enabled:</b></td><td>&nbsp;</td><td>~wifiEnbl~</td></tr>
+<tr><td><b>Generator Exists:</b></td><td>&nbsp;</td><td>~genExst~</td></tr>
+<tr><td><b>Generator Valve Exists:</b></td><td>&nbsp;</td><td>~genVlvExst~</td></tr>
+<tr><td><b>HVM Enabled:</b></td><td>&nbsp;</td><td>~hvmExst~</td></tr>
+<tr><td><b>Pipe Config:</b></td><td>&nbsp;</td><td>~pipeCfg~</td></tr>
+<tr><td><b>Day Light Sensor (Inactive Threshold):</b></td><td>&nbsp;</td><td>~liteToDrkThrsh~</td></tr>
+<tr><td><b>Day Light Sensor (Active Threshold):</b></td><td>&nbsp;</td><td>~drkToLiteThrsh~</td></tr>
+<tr><td><b>Board Serial:</b></td><td>&nbsp;</td><td>~brdSerial~</td></tr>
+<tr><td><b>Model Number:</b></td><td>&nbsp;</td><td>~mdlNum~</td></tr>
+<tr><td><b>Railroad ID:</b></td><td>&nbsp;</td><td>~rrId~</td></tr>
+<tr><td><b>EOT ID:</b></td><td>&nbsp;</td><td>~eotId~</td></tr>
+<tr><td><b>Call Wake Time:</b></td><td>&nbsp;</td><td>~callWakeTime~</td></tr>
+<tr><td><b>Call Sleep Time:</b></td><td>&nbsp;</td><td>~callSlpTime~</td></tr>
+<tr><td><b>Calibration Reminder:</b></td><td>&nbsp;</td><td>~calEnbl~</td></tr>
+<tr><td><b>Calibration Date:</b></td><td>&nbsp;</td><td>~calDate~</td></tr>
+<tr><td><b>Calibration Location:</b></td><td>&nbsp;</td><td>~calLoc~</td></tr>
+<tr><td><b>Calibration Technician:</b></td><td>&nbsp;</td><td>~calTech~</td></tr>
+<tr><td><b>Battery Change Date:</b></td><td>&nbsp;</td><td>~battRplcDate~</td></tr>
+<tr><td><b>Battery Change Location:</b></td><td>&nbsp;</td><td>~battRplcLoc~</td></tr>
+<tr><td><b>Battery Change Technician:</b></td><td>&nbsp;</td><td>~battRplcTech~</td></tr>
+<tr><td><b>EOT Enabled:</b></td><td>&nbsp;</td><td>~eotEnbl~</td></tr>
+</table><p>&nbsp;</p>
+<center><form align="center" action="/Configuration/EditConfiguration.htm"><button type="submit">Edit</button></form></center></div>
+<script type="text/javascript">
+// Enables the page links
+function handleLoad() {
+	// Enable page links in 1 second
+	setTimeout("enablePageLinks()",1000);
+}
+
+// Enables the page links
+function enablePageLinks() {
+	document.getElementById('pageLinks').disabled = false;
+}
+</script>

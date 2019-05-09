@@ -1,0 +1,100 @@
+<div id="content"><h1>Status</h1><table class="left"><tbody>
+<tr><td><b>BPP:</b></td><td>&nbsp;</td><td id="BPP" align="right">~BPP~</td></tr>
+<tr><td><b>MRP:</b></td><td>&nbsp;</td><td id="MRP" align="right">~MRP~</td></tr>
+<tr><td><b>Batt Voltage:</b></td><td>&nbsp;</td><td id="vBatt" align="right">~vBatt~</td></tr>
+<tr><td><b>Batt Charge:</b></td><td>&nbsp;</td><td id="pBatt" align="right">~pBatt~</td></tr>
+<tr><td><b>GNSS Power:</b></td><td>&nbsp;</td><td id="pGNSS" align="right">~pGNSS~</td></tr>
+<tr><td><b>GNSS Lat:</b></td><td>&nbsp;</td><td id="lat" align="right">~lat~</td></tr>
+<tr><td><b>GNSS Long:</b></td><td>&nbsp;</td><td id="long" align="right">~long~</td></tr>
+<tr><td><b>GNSS UTC:</b></td><td>&nbsp;</td><td id="UTC" align="right">~UTC~</td></tr>
+<tr><td><b>GNSS Fix Valid:</b></td><td>&nbsp;</td><td id="fix" align="right">~fix~</td></tr>
+<tr><td><b>GNSS HDOP:</b></td><td>&nbsp;</td><td id="HDOP" align="right">~HDOP~</td></tr></tbody>
+<table class="right"><tbody>
+<tr><td><b>Speed:</b></td><td>&nbsp;</td><td id="sSpeed" align="right">~sSpeed~</td></tr>
+<tr><td><b>Moving:</b></td><td>&nbsp;</td><td id="sMot" align="right">~sMot~</td></tr>
+<tr><td><b>Break Valve Active:</b></td><td>&nbsp;</td><td id="sBrake" align="right">~sBrake~</td></tr>
+<tr><td><b>Gen Valve Active:</b></td><td>&nbsp;</td><td id="sGen" align="right">~sGen~</td></tr>
+<tr><td><b>Dark Status:</b></td><td>&nbsp;</td><td id="sDark" align="right">~sDark~</td></tr>
+<tr><td><b>HVM Status:</b></td><td>&nbsp;</td><td id="sHVM" align="right">~sHVM~</td></tr>
+<tr><td><b>Emergency In Progress:</b></td><td>&nbsp;</td><td id="sEmer" align="right">~sEmer~</td></tr>
+<tr><td><b>Gen RPM:</b></td><td>&nbsp;</td><td id="sRPM" align="right">~sRPM~</td></tr>
+<tr><td><b>Cell Power:</b></td><td>&nbsp;</td><td id="sCell" align="right">~sCell~</td></tr>
+<tr><td><b>EOT Upright:</b></td><td>&nbsp;</td><td id="isUp" align="right">~isUp~</td></tr>
+</tbody></table><p>&nbsp;</p>
+<center><input type="button" id="pauseUpdatesBtn" onclick="handlePause();" value="Stop Updates">
+<p><small>Note: This page updates automatically.</small></p></center>
+</div>
+<script type="text/javascript">
+// Enables the page links
+function handleLoad() {
+	// setup status updating to be as fast as possible and kick off in 1 second.
+	
+}
+
+// Enables the page links
+function enablePageLinks() {
+	document.getElementById('pageLinks').disabled = false;
+}
+
+// Stops updating and enables the page links
+function handlePause() {
+	var btn = document.getElementById('pauseUpdatesBtn');
+	if(btn.value == "Stop Updates")
+	{
+		shouldUpdate = false;
+		if(!msgSent){
+			btn.value = "Start Updates";			
+			enablePageLinks();
+		}else{
+			btn.value = "Updates Stopping";
+			btn.disabled = true;
+		}			
+	}
+	else if(btn.value == "Start Updates")
+	{
+		shouldUpdate = true;
+		document.getElementById('pageLinks').disabled = true;
+		btn.value = "Stop Updates";
+		setTimeout("newAJAXCommand('/Status/status.xml', updateStatus, true)",1000);
+	}
+}
+
+// Updates dynamic variables and schedules the next update(if auto-update is turned off)
+function updateStatus(xmlData) {
+	msgSent	= false;
+	if(!shouldUpdate){
+		enablePageLinks();
+		document.getElementById('pauseUpdatesBtn').value = "Start Updates";
+		document.getElementById('pauseUpdatesBtn').disabled = false;
+	}
+	// Check if a timeout occurred
+	if(!xmlData)
+	{
+		return;
+	}
+	document.getElementById('BPP').innerHTML = getXMLValue(xmlData, 'BPP');
+	document.getElementById('MRP').innerHTML = getXMLValue(xmlData, 'MRP');
+	document.getElementById('vBatt').innerHTML = getXMLValue(xmlData, 'vBatt');
+	document.getElementById('pBatt').innerHTML = getXMLValue(xmlData, 'pBatt');
+	document.getElementById('pGNSS').innerHTML = getXMLValue(xmlData, 'pGNSS');
+	document.getElementById('lat').innerHTML = getXMLValue(xmlData, 'lat');
+	document.getElementById('long').innerHTML = getXMLValue(xmlData, 'long');
+	document.getElementById('UTC').innerHTML = getXMLValue(xmlData, 'UTC');
+	document.getElementById('fix').innerHTML = getXMLValue(xmlData, 'fix');
+	document.getElementById('HDOP').innerHTML = getXMLValue(xmlData, 'HDOP');
+	document.getElementById('sMot').innerHTML = getXMLValue(xmlData, 'sMot');
+	document.getElementById('sSpeed').innerHTML = getXMLValue(xmlData, 'sSpeed');
+	document.getElementById('sBrake').innerHTML = getXMLValue(xmlData, 'sBrake');
+	document.getElementById('sGen').innerHTML = getXMLValue(xmlData, 'sGen');
+	document.getElementById('sDark').innerHTML = getXMLValue(xmlData, 'sDark');
+	document.getElementById('sHVM').innerHTML = getXMLValue(xmlData, 'sHVM');
+	document.getElementById('sEmer').innerHTML = getXMLValue(xmlData, 'sEmer');
+	document.getElementById('sRPM').innerHTML = getXMLValue(xmlData, 'sRPM');
+	document.getElementById('sCell').innerHTML = getXMLValue(xmlData, 'sCell');
+	document.getElementById('isUp').innerHTML = getXMLValue(xmlData, 'isUp');
+	
+	//Uncomment below to enable updating at a desired interval
+	//setTimeout("newAJAXCommand('/Status/status.xml', updateStatus, true)",1000);
+}
+setTimeout("newAJAXCommand('/Status/status.xml', updateStatus, true)",1000);
+</script>

@@ -1,0 +1,13 @@
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\netstandard2.0\watson.jpg
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\netstandard2.0\TestStreamServer.deps.json
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\netstandard2.0\TestStreamServer.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\netstandard2.0\TestStreamServer.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\netstandard2.0\WatsonWebserver.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\bin\Release\netstandard2.0\WatsonWebserver.pdb
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.csprojAssemblyReference.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.csproj.CoreCompileInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.AssemblyInfoInputs.cache
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.AssemblyInfo.cs
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.csproj.CopyComplete
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.dll
+C:\Users\jsayres\Source\Repos\WatsonWebserver\TestStreamServer\obj\Release\netstandard2.0\TestStreamServer.pdb

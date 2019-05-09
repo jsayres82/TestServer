@@ -1,0 +1,26 @@
+<response>
+	<v3p3>~v3p3~</v3p3>
+	<v3p8>~v3p8~</v3p8>
+	<v5>~v5~</v5>
+	<v12>~v12~</v12>
+	<vUHF1>~vUHF1~</vUHF1>
+	<vUHF2>~vUHF2~</vUHF2>
+	<temp>~temp~</temp>
+	<chargeTemp>~chargeTemp~</chargeTemp>
+	<chargeCount>~chargeCount~</chargeCount>
+	<maxCount>~maxCount~</maxCount>
+	<minCount>~minCount~</minCount>
+	<vExtCharge>~vExtCharge~</vExtCharge>
+	<vExtReg>~vExtReg~</vExtReg>
+	<vGen>~vGen~</vGen>
+	<vReg>~vReg~</vReg>
+	<vIn>~vIn~</vIn>
+	<iIn>~iIn~</iIn>
+	<vBatt>~vBatt~</vBatt>
+	<iBatt>~iBatt~</iBatt>
+	<vSys>~vSys~</vSys>
+	<iLoad>~iLoad~</iLoad>
+	<accelX>~accelX~</accelX>
+	<accelY>~accelY~</accelY>
+	<accelZ>~accelZ~</accelZ>
+</response>

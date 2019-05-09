@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0.2</Version>
+    <Description>Simple async C# web server for handling REST requests with SSL support, targeted to both .NET Core 2.0 and .NET Framework 4.6.2.</Description>
+    <Authors>Joel Christner</Authors>
+    <Company>Joel Christner</Company>
+    <Copyright>(c)2019 Joel Christner</Copyright>
+    <PackageProjectUrl>https://github.com/jchristn/WatsonWebserver</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/jchristn/WatsonWebserver/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/jchristn/WatsonWebserver</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>web server rest restful http https api async ssl</PackageTags>
+    <PackageReleaseNotes>Breaking changes, now supports Stream operations for requests and responses.  Fixed stream handling issue.</PackageReleaseNotes>
+    <PackageId>Watson</PackageId>
+    <Product>Watson</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IpMatcher" Version="1.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="RegexMatcher" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>

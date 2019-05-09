@@ -1,0 +1,22 @@
+<response>
+	<BPP>~BPP~</BPP>
+	<MRP>~MRP~</MRP>
+	<vBatt>~vBatt~</vBatt>
+	<pBatt>~pBatt~</pBatt>
+	<pGNSS>~pGNSS~</pGNSS>
+	<lat>~lat~</lat>
+	<long>~long~</long>
+	<UTC>~UTC~</UTC>
+	<fix>~fix~</fix>
+	<HDOP>~HDOP~</HDOP>
+	<sMot>~sMot~</sMot>
+	<sSpeed>~sSpeed~</sSpeed>
+	<sBrake>~sBrake~</sBrake>
+	<sGen>~sGen~</sGen>
+	<sDark>~sDark~</sDark>
+	<sHVM>~sHVM~</sHVM>
+	<sEmer>~sEmer~</sEmer>
+	<sRPM>~sRPM~</sRPM>
+	<sCell>~sCell~</sCell>
+	<isUp>~isUp~</isUp>
+</response>
